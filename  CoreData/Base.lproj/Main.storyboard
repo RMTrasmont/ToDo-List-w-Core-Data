@@ -22,7 +22,7 @@
         <!--Tasks-->
         <scene sceneID="T7l-sG-b9u">
             <objects>
-                <tableViewController id="5yv-Mu-M78" sceneMemberID="viewController">
+                <tableViewController id="5yv-Mu-M78" customClass="ToDoTableViewController" customModule="_CoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2KV-Og-Jdr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="376.80000000000001" y="71.514242878560722"/>
         </scene>
-        <!--View Controller-->
+        <!--Add To Do View Controller-->
         <scene sceneID="f1N-Pk-3W0">
             <objects>
-                <viewController id="5Hb-xI-TWL" sceneMemberID="viewController">
+                <viewController id="5Hb-xI-TWL" customClass="AddToDoViewController" customModule="_CoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Un2-uR-WRu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,6 +96,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="5Hb-xI-TWL" id="sOr-uE-r1Q"/>
+                                        </connections>
                                     </textView>
                                 </subviews>
                             </stackView>
@@ -140,6 +143,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelTapped:" destination="5Hb-xI-TWL" eventType="touchUpInside" id="yji-ux-Ryy"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5s-3Z-6SL">
                                                 <rect key="frame" x="175.5" y="0.0" width="167.5" height="45"/>
@@ -154,6 +160,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="doneTapped:" destination="5Hb-xI-TWL" eventType="touchUpInside" id="Uk7-Hm-9fP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -173,6 +182,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uP0-pn-lsd"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="UVr-RA-vzC" id="G1G-hu-SVg"/>
+                        <outlet property="segmentControl" destination="e0x-an-PHT" id="V1M-Vn-3Uz"/>
+                        <outlet property="textView" destination="six-ng-GK2" id="Vdk-bZ-PWb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVb-Aq-Jum" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
