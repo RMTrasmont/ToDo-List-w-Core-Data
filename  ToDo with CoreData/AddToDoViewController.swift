@@ -20,13 +20,19 @@ class AddToDoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.textView
+        //Highlights place-holder text to be replaced/cleared
+        self.textView.clearsOnInsertion = true
         
         //Listen for Keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(with:)), name: .UIKeyboardWillShow, object: nil)
+        
+        //Show Keyboard Right Away
+        textView.becomeFirstResponder()
     }
     
-    // MARK: Handle Keyboard & Stack View (Buttons&Segments Move Up)
+    // MARK: Methods
+    
+    //Handle Keyboard & Stack View (Buttons&Segments Move Up)
     
     @objc func keyBoardWillShow(with notification:Notification){
         let key = "UIKeyboardFrameEndUserInfoKey"
@@ -37,7 +43,7 @@ class AddToDoViewController: UIViewController {
         
         bottomConstraint.constant = keyboardheight
         
-        UIView.animate(withDuration: 0.3){
+        UIView.animate(withDuration: 0.5){
             self.view.layoutIfNeeded()
         }
     }
@@ -45,9 +51,16 @@ class AddToDoViewController: UIViewController {
     
     @IBAction func cancelTapped(_ sender: UIButton) {
         dismiss(animated: true)
+        
+        //Hide Keyboard
+        textView.resignFirstResponder()
     }
     
     @IBAction func doneTapped(_ sender: UIButton) {
+        dismiss(animated: true)
+        
+        //Hide Keyboard
+        textView.resignFirstResponder()
     }
     
 

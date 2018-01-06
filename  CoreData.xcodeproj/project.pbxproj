@@ -44,7 +44,7 @@
 		53255A7820003D9800C23EC4 = {
 			isa = PBXGroup;
 			children = (
-				53255A8320003D9800C23EC4 /*  CoreData */,
+				53255A8320003D9800C23EC4 /*  ToDo with CoreData */,
 				53255A8220003D9800C23EC4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,7 +57,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		53255A8320003D9800C23EC4 /*  CoreData */ = {
+		53255A8320003D9800C23EC4 /*  ToDo with CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				53255A8420003D9800C23EC4 /* AppDelegate.swift */,
@@ -70,7 +70,7 @@
 				53255A9320003D9800C23EC4 /* Info.plist */,
 				53255A8B20003D9800C23EC4 /* _CoreData.xcdatamodeld */,
 			);
-			path = " CoreData";
+			path = " ToDo with CoreData";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
