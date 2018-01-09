@@ -15,6 +15,9 @@
 		53255A9220003D9800C23EC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53255A9020003D9800C23EC4 /* LaunchScreen.storyboard */; };
 		533160B5200055070065A919 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533160B4200055070065A919 /* AddToDoViewController.swift */; };
 		533160B72000553B0065A919 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533160B62000553B0065A919 /* ToDoTableViewController.swift */; };
+		533160B9200070590065A919 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533160B8200070590065A919 /* CoreDataService.swift */; };
+		533160BC200074360065A919 /* ToDo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533160BA200074360065A919 /* ToDo+CoreDataClass.swift */; };
+		533160BD200074360065A919 /* ToDo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533160BB200074360065A919 /* ToDo+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		53255A9320003D9800C23EC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		533160B4200055070065A919 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
 		533160B62000553B0065A919 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
+		533160B8200070590065A919 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		533160BA200074360065A919 /* ToDo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		533160BB200074360065A919 /* ToDo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +66,10 @@
 		53255A8320003D9800C23EC4 /*  ToDo with CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				533160BA200074360065A919 /* ToDo+CoreDataClass.swift */,
+				533160BB200074360065A919 /* ToDo+CoreDataProperties.swift */,
 				53255A8420003D9800C23EC4 /* AppDelegate.swift */,
+				533160B8200070590065A919 /* CoreDataService.swift */,
 				53255A8620003D9800C23EC4 /* ViewController.swift */,
 				533160B62000553B0065A919 /* ToDoTableViewController.swift */,
 				533160B4200055070065A919 /* AddToDoViewController.swift */,
@@ -146,9 +155,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				533160B5200055070065A919 /* AddToDoViewController.swift in Sources */,
+				533160BD200074360065A919 /* ToDo+CoreDataProperties.swift in Sources */,
 				53255A8720003D9800C23EC4 /* ViewController.swift in Sources */,
 				53255A8520003D9800C23EC4 /* AppDelegate.swift in Sources */,
 				53255A8D20003D9800C23EC4 /* _CoreData.xcdatamodeld in Sources */,
+				533160B9200070590065A919 /* CoreDataService.swift in Sources */,
+				533160BC200074360065A919 /* ToDo+CoreDataClass.swift in Sources */,
 				533160B72000553B0065A919 /* ToDoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = " CoreData/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ ToDo with CoreData/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GTTuts.-CoreData";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -301,7 +313,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = " CoreData/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ ToDo with CoreData/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GTTuts.-CoreData";
 				PRODUCT_NAME = "$(TARGET_NAME)";

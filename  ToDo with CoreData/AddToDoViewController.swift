@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class AddToDoViewController: UIViewController {
 
+    //MARK: Core Data Properties
+    var managedContext: NSManagedObjectContext!
+    var todo: ToDo?
+    
     //MARK: Outlets
     @IBOutlet weak var textView: UITextView!
     
@@ -28,6 +33,14 @@ class AddToDoViewController: UIViewController {
         
         //Show Keyboard Right Away
         textView.becomeFirstResponder()
+        
+        //If an instance of a ToDo already exists(editing), show it on textfield
+        if let todo = todo{
+            textView.text = todo.title
+            textView.text = todo.title   //<--Bug*
+            segmentControl.selectedSegmentIndex = Int(todo.priority)
+        }
+    
     }
     
     // MARK: Methods
@@ -57,10 +70,27 @@ class AddToDoViewController: UIViewController {
     }
     
     @IBAction func doneTapped(_ sender: UIButton) {
-        dismiss(animated: true)
+        guard let theTitle = textView.text, !theTitle.isEmpty else {return}
         
-        //Hide Keyboard
-        textView.resignFirstResponder()
+        //Check if ToDo already exists, then update, if not create one
+        if let todo = self.todo {
+            todo.title = theTitle
+            todo.priority = Int16(segmentControl.selectedSegmentIndex)
+        } else {
+            let todo = ToDo(context: managedContext)
+            todo.title = theTitle
+            todo.priority = Int16(segmentControl.selectedSegmentIndex)
+            todo.date = NSDate()
+        }
+        //Save ManagedContext
+        do{
+            try managedContext.save()
+            dismiss(animated: true)
+            textView.resignFirstResponder()
+        } catch let err{
+            print("ERROR SAVING TO CRE DATA:",err.localizedDescription)
+        }
+        
     }
     
 
